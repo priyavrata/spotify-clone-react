@@ -4,12 +4,16 @@
     height:100vh;
     color:white;
     padding: 30px;
-
+    overflow-y: overlay;
 }
 
 .body_icons{
     align-items: center;
     display:flex;
+}
+
+.body::-webkit-scrollbar{
+    display:none;
 }
 
 .body_icons .MuiSvgIcon-root{
@@ -51,4 +55,8 @@
 
 .body_infoText p{
     font-size:14px;
+}
+
+.body_songs{
+
 }
