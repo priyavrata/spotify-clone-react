@@ -7,11 +7,12 @@ import Footer from "./Footer";
 function Player( {spotify} ) {
     return (
         <div className="player">
+            {console.log(spotify)}
             <div className="player_body">
                 <Sidebar/>
-                <Body spotify/>
+                <Body spotify={spotify}/>
             </div>
-            <Footer/>
+            <Footer spotify={spotify}/>
         </div>
     );
 }

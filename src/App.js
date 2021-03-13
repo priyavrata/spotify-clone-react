@@ -54,13 +54,13 @@ function App() {
     }
   },[]);
   // console.log("user*: ",user);
-  // console.log("token*:", token);
+  console.log("token*:", token);
   // console.log("playlists* :",playlists);
   return (
     <div className="app">
       {
         token? (
-          <Player spotify/>
+          <Player spotify={spotify}/>
         ):
       
         <Login />
