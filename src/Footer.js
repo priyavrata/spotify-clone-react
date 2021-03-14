@@ -80,7 +80,7 @@ function Footer({spotify}) {
             <div className="footer_left">
                 <img
                     className="footer_albumLogo"
-                    src="https://randomwordgenerator.com/img/picture-generator/54e6d6474e53ae14f1dc8460962e33791c3ad6e04e5074417c2e7dd19245c0_640.jpg"
+                    src={item?.album.images[0].url}
                     alt=""
                 />
                 {item ? (

@@ -6,11 +6,12 @@ export const initialState = {
     top_artists: null,
     playing: false,
     item: null,
+    token:null,
     // token: "BQAkx3ermdGgsW1ePk_yFbKa00_ycyGcthLmHmg3E00OZFU_ora5GqLDKU1mWWFJKE7RVTgdq5hp-gLzQB24C5HXu5Vockkmn4VtAKMW5PuHO40EaNNo4v-Q3NwzbqVDbnE6alWhAh986GXGgHjl097eJUr84KQRZ9iRi5jk7UIrroV_"
   };
 
 const reducer = (state, action) =>{
-    console.log(action);
+    console.log("action: ",action);
     switch(action.type){
         case "SET_USER":
         return {

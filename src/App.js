@@ -20,41 +20,49 @@ function App() {
     const _token=hash.access_token;
 
     if(_token) {
+      spotify.setAccessToken(_token);
+      console.log("Spotify: ",spotify.addToMySavedAlbums);
+      dispatch({
+        type: "SET_TOKEN",
+        token: _token,
+      });
+
+      spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+
+      spotify.getMyTopArtists().then((response) =>
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        })
+      );
 
       dispatch({
-        type:"SET_TOKEN",
-        token:_token,
-      })
-
-      // console.log(_token);
-
-      spotify.setAccessToken(_token);
+        type: "SET_SPOTIFY",
+        spotify: spotify,
+      });
 
       spotify.getMe().then((user) => {
-        // console.log(user);
         dispatch({
-          type: 'SET_USER',
-          user
-        });
-      });
-      
-      spotify.getUserPlaylists().then((playlists)=>{
-        dispatch({
-          type:"SET_PLAYLISTS",
-          playlists:playlists,
+          type: "SET_USER",
+          user,
         });
       });
 
-      spotify.getPlaylist('37i9dQZEVXcJZyENOWUFo7').then(response=>{
+      spotify.getUserPlaylists().then((playlists) => {
         dispatch({
-          type:'SET_DISCOVER_WEEKLY',
-          discover_weekly:response,
-        })
-      })
+          type: "SET_PLAYLISTS",
+          playlists,
+        });
+      });
     }
-  },[]);
+  }, [token, dispatch]);
   // console.log("user*: ",user);
-  console.log("token*:", token);
+  // console.log("token*:", token);
   // console.log("playlists* :",playlists);
   return (
     <div className="app">
