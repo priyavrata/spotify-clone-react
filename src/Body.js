@@ -29,6 +29,7 @@ function Body({spotify}) {
       };
     
       const playSong = (id) => {
+        console.log("id:", id);
         spotify
           .play({
             uris: [`spotify:track:${id}`],
