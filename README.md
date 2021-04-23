@@ -5,7 +5,8 @@ The Project involved the development of a Spotify Clone through the use of React
 - [Tools and Technologies used](#ttu)
 - [Application](#app)
 
-##Screenshots
+## Screenshots<a name="ss"></a>
+
 - **Login:**
 ![Login](https://user-images.githubusercontent.com/72911752/115898631-7286fa00-a466-11eb-8255-1e00d1c0050e.JPG)
 
